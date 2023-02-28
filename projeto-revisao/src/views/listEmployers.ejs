@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <h2 class="lstE">
+        Lista de funcionários:
+    </h2>
+
+    <% if(edited) { %>
+        <span>Editado com sucesso</span>
+    <% } %>
+
+    <% if(removed) { %>
+        <span>Apagado com sucesso</span>
+    <% } %>
+
+    <ul class="lstEemployers">
+        <% employers.forEach(vl => { %>
+
+            <li class="lstLiRemove">Nome: <%= vl.name %> - Sobrenome: <%= vl.lastname %> - Idade: <%= vl.age %>
+            - <a href="/editEmployers/<%= vl._id %>">[Editar]</a>
+            - <a class="lstARemove" href="/removeEmployers/<%= vl._id %>">[Remover]</a>
+            <div class="lstConfirmRemove none">
+                <span>Deseja realmente remover esse item?</span>
+                <div>
+                    <a href="/removeEmployers/<%= vl._id %>"><button class="lstYes">SIM</button></a>
+                    <button class="lstNo">NÃO</button>
+                </div>
+            </div>
+            </li>
+
+        <% }) %>
+    </ul>
+    <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/foot.ejs') %>
+</body>
+</html>

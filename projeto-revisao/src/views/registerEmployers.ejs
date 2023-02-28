@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <h2 class="reCtitle">
+        Esta é a página para o registro de um novo funcionário para o nosso banco de dados
+    </h2>
+    <% if (cadastrado) { %>
+        <span>Cadastrado com sucesso</span>
+    <% } %>
+    <form class="reCform" action="/registerEmployers/new" method="POST">
+        <label for="">Nome:</label>
+        <input type="text" name="name"><br>
+
+        <label for="">Sobrenome:</label>
+        <input type="text" name="lastname"><br>
+
+        <label for="">Idade:</label>
+        <input type="text" name="age"><br>
+
+        <label for="">Senha:</label>
+        <input type="text" name="pwd"><br>
+
+        <button type="submit">Registrar</button>
+    </form>
+    <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/foot.ejs') %>
+</body>
+</html>

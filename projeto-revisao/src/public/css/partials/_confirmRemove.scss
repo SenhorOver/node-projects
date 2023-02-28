@@ -1,0 +1,43 @@
+.none{
+    display: none;
+}
+
+.lstLiRemove{
+    position: relative;
+    width: fit-content;
+    .lstConfirmRemove{
+        width: 200px;
+        position: absolute;
+        right: 0;
+        background-color: white;
+        border: 1px solid red;
+        z-index: 1;
+        text-align: center;
+        padding: 15px 0;
+        span{
+            display: block;
+            margin-bottom: 15px;
+        }
+        button{
+            color: white;
+            cursor: pointer;
+            width: 40%;
+            height: 35px;
+            outline: none;
+        }
+        a{
+            button.lstYes{       
+                background-color: red;
+                &:active{
+                    background-color: rgb(252, 137, 137);
+                }
+            }   
+        }
+        button.lstNo{
+            background-color: green;
+            &:active{
+                background-color: rgb(0, 255, 0);
+            }
+        }
+    }
+}

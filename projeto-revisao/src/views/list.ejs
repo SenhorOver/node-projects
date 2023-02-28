@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <h2 class="lsttitle">Todos os produtos registrados:</h2>
+    <br><br>
+    <% if(edited) { %>
+        <span>Editado com sucesso</span>
+    <% } %>
+
+    <% if(removed) { %>
+        <span>Apagado com sucesso</span>
+    <% } %>
+    <ul class="lstProducts">
+        <% products.forEach(vl => { %>
+        <li class="lstLiRemove">Nome: <%= vl.name %> - Preço: R$ <%= vl.price.toFixed(2) %> - Quantidade: <%= vl.stock %>
+        - <a href="/edit/<%= vl._id %>">[Editar]</a>
+        - <a class="lstARemove" href="/remove/<%= vl._id %>">[Excluir]</a>
+        <div class="lstConfirmRemove none">
+            <span>Deseja realmente remover esse item?</span>
+            <div>
+                <a href="/remove/<%= vl._id %>"><button class="lstYes">SIM</button></a>
+                <button class="lstNo">NÃO</button>
+            </div>
+        </div>
+        </li>
+        <% }) %>
+    </ul>
+    <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/foot.ejs') %>
+</body>
+</html>

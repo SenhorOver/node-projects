@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <h2 class="retitle">
+        Esta é a página para o registro de um novo produto no nosso banco de dados
+    </h2>
+    <% if (cadastrado) { %>
+        <span>Cadastrado com sucesso</span>
+    <% } %>
+    <form class="reform" action="/register/new" method="POST">
+        <label for="">Nome do Produto:</label>
+        <input type="text" name="name"><br>
+
+        <label for="">Preço do Produto:</label>
+        <input type="text" name="price"><br>
+
+        <label for="">Quantidade em Estoque:</label>
+        <input type="text" name="stock"><br>
+
+        <button type="submit">Registrar</button>
+    </form>
+    <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/foot.ejs') %>
+</body>
+</html>

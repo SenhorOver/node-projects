@@ -1,0 +1,84 @@
+header.hrheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 35px;
+  margin-bottom: 100px;
+  background-color: rgb(250, 126, 126);
+}
+header.hrheader nav.navbar ul.menu {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+header.hrheader nav.navbar ul.menu li a {
+  display: block;
+  padding: 20px 25px;
+  text-decoration: none;
+  color: black;
+}
+header.hrheader nav.navbar ul.menu li a:hover {
+  background-color: #aaa;
+  color: white;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+footer.ftfooter {
+  background-color: #aaa;
+  text-align: center;
+  padding: 35px;
+  margin-top: 100px;
+}
+
+.none {
+  display: none;
+}
+
+.lstLiRemove {
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.lstLiRemove .lstConfirmRemove {
+  width: 200px;
+  position: absolute;
+  right: 0;
+  background-color: white;
+  border: 1px solid red;
+  z-index: 1;
+  text-align: center;
+  padding: 15px 0;
+}
+.lstLiRemove .lstConfirmRemove span {
+  display: block;
+  margin-bottom: 15px;
+}
+.lstLiRemove .lstConfirmRemove button {
+  color: white;
+  cursor: pointer;
+  width: 40%;
+  height: 35px;
+  outline: none;
+}
+.lstLiRemove .lstConfirmRemove a button.lstYes {
+  background-color: red;
+}
+.lstLiRemove .lstConfirmRemove a button.lstYes:active {
+  background-color: rgb(252, 137, 137);
+}
+.lstLiRemove .lstConfirmRemove button.lstNo {
+  background-color: green;
+}
+.lstLiRemove .lstConfirmRemove button.lstNo:active {
+  background-color: rgb(0, 255, 0);
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head.ejs') %>
+</head>
+<body>
+    <%- include('./partials/header.ejs') %>
+    <h2 class="edttitle">
+        Esta é a página para a edição de um registro
+    </h2>
+    <form class="edtform" action="/edit/new/<%- product._id %>" method="POST">
+        <label for="">Nome do Produto:</label>
+        <input type="text" name="name" value="<%- product.name %>"><br>
+
+        <label for="">Preço do Produto:</label>
+        <input type="text" name="price" value="<%- product.price.toFixed(2) %>"><br>
+
+        <label for="">Quantidade em Estoque:</label>
+        <input type="text" name="stock" value="<%- product.stock %>"><br>
+
+        <button type="submit">Editar</button>
+    </form>
+    <%- include('./partials/footer.ejs') %>
+    <%- include('./partials/foot.ejs') %>
+</body>
+</html>
